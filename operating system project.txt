@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<unistd.h>
+#include<sys/stat.h>
+#include<sys/types.h>
+#include<fcntl.h>
+
+int Resources(int process,int need)
+{
+int minResource=0;
+minResource = process*(need-1)+1;
+return minResource;
+}
+int main()
+{
+int choice;
+printf("***************************************************WELCOME TO LINEX'S KITCHEN CHECKING INGREADIENT**********************************************************\n");
+printf("\t\t\tDO YOU WANT TO ENTER MANUALLY OR AUTOMATIC FOR CHIEF IN KITCHEN AND ATMOST CLAIMED INGREDIENT BY EACH CHIEF\t\t\n");
+printf("\t\t\t\t\tPRESS 1 ==> ENTER YOURSELF\n");
+printf("\t\t\t\t\tPRESS 2 ==> SEE LIST \n");
+scanf("%d",&choice);
+if(choice==1){
+int p,process,n,need,t1;
+printf("\t\t\t\t\tENTER NUMBER OF CHIEF IN KITCHEN ==>\t\t\n");
+scanf("%d",&p);
+printf("\t\t\t\t\tENTER ATMOST INGREADIENT CLAIMED BY CHIEF ==>\t\t\n");
+scanf("%d",&n);
+process=p;
+need=n;
+t1=Resources(process,need);
+printf("NO OF CHIEF IN KITCHEN\t\t\t\t EACH CHIEF CLAIMED ATMOST INGREADIENT\t\t\t\t MAXIMUM NO OF INGREADIENT IN KITCHEN\t");
+printf("\t\t\t %d\t\t\t\t\t\t %d\t\t\t\t\t\t\t\t\t\t %d\n",process,need,t1);
+//printf("\t\t\t\t\t SO,THE MAXIMUM NO OF INGREADIENT IN KITCHEN WILL BE ==>  %d\n",Resources(process,need));
+printf("********************************************THANKYOU FOR USING LINEX'S KITCHEN CHECKING INGREADIENT -VISIT AGAIN***********************************************\n");
+}
+else
+{
+int  p1=3,p2=4,p3=5,p4=6,p5=7;
+int n1=4,n2=5,n3=6,n4=7,n5=8;
+printf("NO.OF CHIEF IN KITCHEN\t\t\t\t EACH CHIEF CLAIMED ATMOST INGREADIENT\t\t\t\t MAXIMUM NO OF INGREADIENT IN KITCHEN\t");
+int r1,r2,r3,r4,r5;
+r1=Resources(p1,n1);
+r2=Resources(p2,n2);
+r3=Resources(p3,n3);
+r4=Resources(p4,n4);
+r5=Resources(p5,n5);
+printf("\t\t\t %d\t\t\t\t\t\t %d\t\t\t\t\t\t\t\t\t\t %d\n",p1,n1,r1);
+printf("\t %d\t\t\t\t\t\t %d\t\t\t\t\t\t\t\t\t\t %d\n",p2,n2,r2);
+printf("\t %d\t\t\t\t\t\t %d\t\t\t\t\t\t\t\t\t\t %d\n",p3,n3,r3);
+printf("\t %d\t\t\t\t\t\t %d\t\t\t\t\t\t\t\t\t\t %d\n",p4,n4,r4);
+printf("\t %d\t\t\t\t\t\t %d\t\t\t\t\t\t\t\t\t\t %d\n",p5,n5,r5);
+printf("**********************************************THANKYOU FOR  USING LINEX'S KITCHEN CHECKING INGREADIENT -VISIT AGAIN********************************************$}
+}
